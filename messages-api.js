@@ -10,7 +10,7 @@ const messages = []
 
 const checkMessagesLimitMiddleware = (req, res, next) => {
     if (messages.length === 5) {
-        res.status(429).end()
+        return res.status(429).end()
     }
     
     else {
