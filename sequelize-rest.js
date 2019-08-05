@@ -65,9 +65,11 @@ app.delete('/movies/:id', (req, res, next) => {
     })
         .then(numDeleted => {
             if (numDeleted) {
-                res.status(204).end()
+                return res.status(204).end()
             }
-            res.status(404).end()
+            else {
+                return res.status(404).end()
+            }
         })
         .catch(next)
 })
